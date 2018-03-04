@@ -1,28 +1,23 @@
-# How to contribute
+# How to Contribute
 
-We definitely welcome feedback and contribution to Google APIs! Here
-is some guideline and information about how to do so.
+We'd love to accept your patches and contributions to this project. There are
+just a few small guidelines you need to follow.
 
-## Legal requirements
+## Contributor License Agreement
 
-In order to protect both you and ourselves, you will need to sign the
-[Contributor License Agreement](https://cla.developers.google.com/clas).
+Contributions to this project must be accompanied by a Contributor License
+Agreement. You (or your employer) retain the copyright to your contribution,
+this simply gives us permission to use and redistribute your contributions as
+part of the project. Head over to <https://cla.developers.google.com/> to see
+your current agreements on file or to sign a new one.
 
-## Technical requirements
+You generally only need to submit a CLA once, so if you've already submitted one
+(even if it was for a different project), you probably don't need to do it
+again.
 
-You will need several tools to work with this repository. At minimum,
-you need both [Protocol Buffers](https://github.com/google/protobuf)
-and [gRPC](https://github.com/grpc) in order to compile this
-repository and generate client library source code in various
-programming languages.
+## Code reviews
 
-To compile the generated code into usable client libraries, you will
-need to use appropriate development environments and setup proper
-build configurations.
-
-## Additional note
-
-Currently, the root's Makefile only lets you generate source code for
-the client library in the programming languages supported by
-[gRPC](https://github.com/grpc). It does not generate the ready-to-use
-client libraries yet.
+All submissions, including submissions by project members, require review. We
+use GitHub pull requests for this purpose. Consult
+[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
+information on using pull requests.
