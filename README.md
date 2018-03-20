@@ -1,21 +1,21 @@
 # Google APIs
 
 The [googleapis](https://github.com/googleapis) organization hosts tools, 
-technical articles, and issues related to API practice at Google.
+technical articles, and issues related to Google API design and practice.
 
 ### About Google APIs
 
 [Google APIs](https://github.com/googleapis/googleapis)
 refers to networked APIs provided by Google services.
 Most Google APIs are hosted on the `googleapis.com` domain,
-and most services provide
-both [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
+and support both
+[REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
 and [gRPC](https://grpc.io/) APIs using
 [transcoding](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto).
 
-Google APIs are developed as RPC services defined using the
-[Protocol Buffer language](https://developers.google.com/protocol-buffers/)
-(a.k.a. "proto"). API specifications are published in the
+Google APIs are developed as RPC API services defined using
+[Protocol Buffers](https://developers.google.com/protocol-buffers/)
+(proto). Google API specifications are published in the
 [Google APIs](https://github.com/googleapis/googleapis) repository.
 External developers can use the published proto files to generate documentation and
 client libraries or to guide their own API definitions.
