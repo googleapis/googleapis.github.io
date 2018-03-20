@@ -36,6 +36,26 @@ more easily call Google's gRPC and REST APIs. Many of these libraries are
 generated using [toolkit](https://github.com/googleapis/toolkit) and
 [artman](https://github.com/googleapis/artman).
 
+### Google API Extensions (GAX)
+
+The [googleapis](https://github.com/googleapis) organization also hosts
+repositories that contain common code used by Google's generated and handwritten
+client libraries. Details vary by language, but most provide support
+for generally-needed features like paging and retry. Currently there is one such
+library for each of the main languages that we support:
+[gax-dotnet](https://github.com/googleapis/gax-dotnet),
+[gax-go](https://github.com/googleapis/gax-go),
+[gax-java](https://github.com/googleapis/gax-java),
+[gax-nodejs](https://github.com/googleapis/gax-nodejs),
+[gax-php](https://github.com/googleapis/gax-php),
+[gax-python](https://github.com/googleapis/gax-python), and
+[gax-ruby](https://github.com/googleapis/gax-ruby).
+Note that we consider these to be internal implementation details of our
+clients and reserve the right to make changes, so if you choose to use them,
+be sure to refer to tagged versions.
+
+### OpenAPI Tools
+
 We are also building tools that work with the
 [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification)
 for REST APIs. [gnostic](https://github.com/googleapis/gnostic)
@@ -44,9 +64,10 @@ descriptions, puts them in an efficient binary representation,
 and allows efficient plugins and standalone tools to be easily written
 in any programming language with Protocol Buffer support. 
 
-### Feedback and Questions
+### For feedback and questions, please file an issue!
 
 If you have feedback or questions regarding API design or methodology,
-please [file an issue here](https://github.com/googleapis/googleapis.github.io/issues).
+please file an issue in the
+[googleapis.github.io issues area](https://github.com/googleapis/googleapis.github.io/issues).
 For specific tool questions, please file an issue on the corresponding
 repository. We look forward to hearing from you!
