@@ -29,6 +29,15 @@ It also provides solutions to common design issues,
 such as proper default values for enums and 
 patterns for long-running operations.
 
+### How to Call Google APIs
+
+The easiest way to call a Google API is with a [Google Cloud Client Library](https://cloud.google.com/apis/docs/cloud-client-libraries).
+For developers working in languages or environments that we don't currently support,
+we provide instructions here for calling Google APIs in both [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) and [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) forms:
+
+- [How to Call Google APIs, REST edition](/HowToREST)
+- [How to Call Google APIs, RPC edition](/HowToRPC)
+
 ### API Client Tools
 
 Many Google APIs are supported by client libraries that developers can use to

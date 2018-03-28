@@ -1,55 +1,104 @@
 # How to Call Google APIs: REST Edition
 
-_For many developers, the easiest way to call a Google API is with one of our client libraries. But occasionally one may prefer to make API calls directly - perhaps from a language or environment that we don’t support or using a different networking library or tool. Here we’ll show you how to do it._
+_For many developers, the easiest way to call a Google API is with one of our client libraries. But occasionally someone may prefer to make API calls directly - perhaps from a language or environment that we don’t support or using a different networking library or tool. Here we’ll show you how to do it._
 
-This page focuses on calling Google APIs using JSON REST interfaces. 
-Most of these APIs are also available as Protocol Buffer-based 
-RPC services. For more on that, see
-[How to Call Google APIs, RPC Edition](/HowToRPC).
+This page focuses on calling Google APIs using JSON REST interfaces. Most of these APIs are also available as Protocol Buffer-based 
+RPC services. For more on that, see [How to Call Google APIs, RPC Edition](/HowToRPC).
 
 ## What you’ll need
 
 ### An API definition
-Most Google APIs are designed as RPC APIs using the Protocol Buffers language. The Protocol Buffers definition of public Google APIs are hosted on GitHub in the googleapis repository.
+Most Google APIs are available as JSON REST services. These APIs are formally described by the [Google API Discovery Service](https://developers.google.com/discovery/) in a JSON representation known as the [Discovery Document](https://developers.google.com/discovery/v1/reference/apis) format.
 
-For these examples, we’ll use the Cloud Natural Language API, which is defined by google/cloud/language/v1/language_service.proto. The RPC details are documented online in the Google Cloud Natural Language API reference. We’ll call the AnalyzeEntities API, which takes a block of text as input and returns a list of names and nouns that it finds in the text along with some interesting properties of each entity.
-Protocol Buffers support 
-For all Google RPC APIs, the messages that are sent and received using an encoding called  Protocol Buffers, and the definitive descriptions of these APIs are written in the Protocol Buffer Language. 
+For an example, see the [Cloud Natural Language API](https://cloud.google.com/natural-language/), which is defined by [this Discovery Document](https://language.googleapis.com/$discovery/rest?version=v1). Human-readable documentation is in the [Google Cloud Natural Language API reference](https://cloud.google.com/natural-language/docs/reference/rest/). We’ll call the [AnalyzeEntities](https://cloud.google.com/natural-language/docs/reference/rest/v1/documents/analyzeEntities) service, which takes a block of text as input and returns a list of names and nouns that it finds in the text along with some interesting properties of each entity.
 
-To compile Protocol Buffer Language files, you’ll need `protoc`, the Protocol Buffer compiler. You can download `protoc` from the google/protobuf release page on GitHub or build it from source. You’ll probably also need a code generation plugin for the language that you’re using. Plugins are standalone executables written in many different languages, and the plugin interface is defined in the plugin.proto file. Here are some plugins that we have used:
-https://github.com/golang/protobuf
-https://github.com/apple/swift-protobuf
-### Making API requests
-gRPC is the recommended way to call Google RPC APIs. gRPC support is typically provided by additional `protoc` plugins that generate code for API clients and servers. This code uses lower-level primitives that send messages using gRPC’s HTTP/2-based messaging system, which supports request multiplexing, streaming APIs, and advanced flow control. To learn more about working with gRPC, visit grpc.io/docs. See also: grpcurl.
+### JSON
+Google REST APIs use JSON for most message responses and POST bodies. Quoting [www.json.org](https://www.json.org/):
 
-If gRPC support is unavailable, Google APIs can also be called using HTTP/1. All requests should be made as HTTP/1 POSTs using the protocol described below.
+> JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the [JavaScript Programming Language](http://crockford.com/javascript/), [Standard ECMA-262 3rd Edition - December 1999](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf). JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.
+
+### A way to make API requests
+Google REST APIs are designed to be called by any standards-compliant HTTP client, including the [curl](https://curl.haxx.se/) command-line tool and library.
+
 ### Authentication
-To use Google APIs, a client needs to use API keys for unauthenticated requests or OAuth tokens for authenticated request. For more information, see Authentication Overview.
+To use Google APIs, a client needs to use API keys for unauthenticated requests or OAuth tokens for authenticated requests. For more information, see [the Google Cloud Authentication Overview](https://cloud.google.com/docs/authentication/).
 
-The API keys can be obtained from the Google Cloud Console > Credentials page. The OAuth tokens can be obtained using an OAuth library. For more information, see the documentation for the oauth2l on GitHub.
-## How it works
-### The HTTP RPC Protocol
-Most Google APIs support a simple RPC protocol using Protocol Buffers (protobuf) over HTTP. It allows clients to call Google APIs directly, often using standard library functions.
+API keys can be obtained from the [Google Cloud Console > Credentials](http://console.cloud.google.com/apis/credentials) page. OAuth tokens can be obtained by [OAuth 2](https://oauth.net/2/) clients and libraries. For a sample command-line client, see the [oauth2l](https://github.com/google/oauth2l) on GitHub.
 
-This protocol uses fixed URLs to specify the RPC endpoints, and passes request/response messages as HTTP request/response body using HTTP POST. It uses normal HTTP headers to pass the RPC metadata, such as System Parameters.
-URL
-RPC URLs have the following format:
+## An example
 
-URL ::= BaseUrl "/" Service "/" Method
+Here is a simple example that uses [curl](https://curl.haxx.se/) to call the [AnalyzeEntities](https://cloud.google.com/natural-language/docs/reference/rest/v1/documents/analyzeEntities) service:
 
-BaseUrl. This is the base URL published by service owners, either via documentation or service discovery. For most Google APIs, the BaseUrl looks like "https://language.googleapis.com/$rpc". The base address can be found in the API reference documentation where it is identified as the “Service name”. For this example, “language.googleapis.com” is found in the Google Cloud Natural Language API Reference. 
-Service. This is the fully qualified protobuf `service` name, such as "google.cloud.language.v1.LanguageService". In this case, “google.cloud.language.v1” is the package name in google/cloud/language/v1/language_service.proto and “LanguageService” is the name of the service section found on this line.
-Method. This is the protobuf `rpc` name, such as "AnnotateText".
-Requests
-RPC request messages are serialized and sent as the HTTP request body. For the server to handle the request properly, the client must set several HTTP request headers:
+```
+$ curl "https://language.googleapis.com/v1/documents:analyzeEntities" \
+  -X POST \
+  -H "X-Goog-Api-Key: $APIKEY" \
+  -H "Content-Type: application/json" \
+  -d '{"document":{"content":"The rain in Spain stays mainly in the plain.", "type":"PLAIN_TEXT"}}' \
+  -i
+HTTP/2 200 
+content-type: application/json; charset=UTF-8
+vary: X-Origin
+vary: Referer
+vary: Origin,Accept-Encoding
+date: Wed, 28 Mar 2018 15:37:09 GMT
+server: ESF
+cache-control: private
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+alt-svc: hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339; quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
+accept-ranges: none
 
-Content-Type. The request message format is specified by the Content-Type header and must be "application/x-protobuf".
-X-Goog-Api-Key. This specifies a valid Google API key. It is optional if the Authorization header is used.
-Authorization. This specifies a valid Google OAuth access token in the format of "Bearer {token}". It is optional if the request is unauthenticated or if an API key is used.
-User-Agent. This should contain a meaningful string that identifies the client application for analytics and troubleshooting purposes. It is usually provided automatically by HTTP support libraries.
-Responses
-For successful requests, the HTTP status code is `200` and the HTTP response body contains the serialized RPC response message. For unsuccessful requests, the HTTP status code is the HTTP mapping for `google.rpc.Code` and the HTTP response body contains a serialized `google.rpc.Status` message. 
+{
+  "entities": [
+    {
+      "name": "rain",
+      "type": "OTHER",
+      "metadata": {},
+      "salience": 0.67902344,
+      "mentions": [
+        {
+          "text": {
+            "content": "rain",
+            "beginOffset": 4
+          },
+          "type": "COMMON"
+        }
+      ]
+    },
+    {
+      "name": "plain",
+      "type": "OTHER",
+      "metadata": {},
+      "salience": 0.17103066,
+      "mentions": [
+        {
+          "text": {
+            "content": "plain",
+            "beginOffset": 38
+          },
+          "type": "COMMON"
+        }
+      ]
+    },
+    {
+      "name": "Spain",
+      "type": "LOCATION",
+      "metadata": {},
+      "salience": 0.1499459,
+      "mentions": [
+        {
+          "text": {
+            "content": "Spain",
+            "beginOffset": 12
+          },
+          "type": "PROPER"
+        }
+      ]
+    }
+  ],
+  "language": "en"
+}
+```
 
-The HTTP response contains at least the following headers:
-
-Content-Type. This specifies the response serialization format. For normal responses and server errors, this will be "application/x-protobuf". Different values can be returned for network errors, such as when a message is rejected by a network proxy. All such errors will be accompanied by appropriate HTTP status codes.
