@@ -4,7 +4,6 @@ _For many developers, the easiest way to call a Google API is with one of our cl
 
 This page focuses on calling Google APIs directly using their underlying RPC interfaces. Most of these APIs are also available as REST services. For that, see [How to Call Google APIs, REST Edition](/HowToREST).
 
-
 ## What you’ll need
 
 ### An API definition
@@ -16,8 +15,10 @@ For these examples, we’ll use the [Cloud Natural Language API](https://cloud.g
 For all Google RPC APIs, the messages that are sent and received using the [Protocol Buffers](https://developers.google.com/protocol-buffers/docs/overview) encoding, and the definitive descriptions of these APIs are written in the Protocol Buffers Language. 
 
 To compile Protocol Buffer Language files, you’ll need `protoc`, the Protocol Buffer compiler. You can download `protoc` from the [google/protobuf release page](https://github.com/google/protobuf/releases) on GitHub or build it from source. You’ll probably also need a code generation plugin for the language that you’re using. Plugins are standalone executables written in many different languages, and the plugin interface is defined in the [plugin.proto](https://github.com/google/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto) file. Here are some plugins that we have used:
-- [Go](https://github.com/golang/protobuf)
-- [Swift](https://github.com/apple/swift-protobuf)
+
+- **Go** [github.com/golang/protobuf](https://github.com/golang/protobuf)
+- **Swift** [github.com/apple/swift-protobuf](https://github.com/apple/swift-protobuf)
+- **Rust** [github.com/stepancheg/rust-protobuf](https://github.com/stepancheg/rust-protobuf)
 
 ### A way to make API requests
 [gRPC](https://grpc.io/) is the recommended way to call Google RPC APIs. gRPC support is typically provided by additional `protoc` plugins that generate code for API clients and servers. This code uses lower-level primitives that send messages using gRPC’s HTTP/2-based messaging system, which supports request multiplexing, streaming APIs, and advanced flow control. To learn more about working with gRPC, visit [grpc.io/docs](https://grpc.io/docs).
@@ -56,3 +57,8 @@ For successful requests, the HTTP status code is `200` and the HTTP response bod
 
 The HTTP response contains at least the following headers:
 - **Content-Type.** This specifies the response serialization format. For normal responses and server errors, this will be "application/x-protobuf". Different values can be returned for network errors, such as when a message is rejected by a network proxy. All such errors will be accompanied by appropriate HTTP status codes.
+
+## [Examples](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/)
+### [Go](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/go)
+### [Rust](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/rust)
+### [Swift](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/swift)
