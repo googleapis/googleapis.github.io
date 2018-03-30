@@ -16,7 +16,5 @@ protoc \
 	google/api/http.proto \
 	google/protobuf/descriptor.proto \
  	-Igoogleapis \
-	--swift_out=googleapis 
+	--rust_out=src 
 
-# move Swift files to the Sources directory
-find googleapis -name "*.swift" -exec mv {} Sources \;
