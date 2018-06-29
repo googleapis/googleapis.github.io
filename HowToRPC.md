@@ -58,7 +58,7 @@ For successful requests, the HTTP status code is `200` and the HTTP response bod
 The HTTP response contains at least the following headers:
 - **Content-Type.** This specifies the response serialization format. For normal responses and server errors, this will be "application/x-protobuf". Different values can be returned for network errors, such as when a message is rejected by a network proxy. All such errors will be accompanied by appropriate HTTP status codes.
 
-## [Examples](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/)
-### [Go](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/go)
-### [Rust](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/rust)
-### [Swift](https://github.com/googleapis/googleapis.github.io/tree/master/Examples/RPC/swift)
+## [examples](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/)
+### [Go](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/go)
+### [Rust](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/rust)
+### [Swift](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpC/swift)
