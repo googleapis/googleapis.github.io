@@ -18,6 +18,6 @@ This sample authenticates with an API key that it reads from the
 - Build and install `protoc-gen-rust` by running `cargo install protobuf` at the
   command line.
 
-- Run the [RUNME](RUNME) script to generate Protocol Buffer support code.
+- Run the [SETUP.sh](SETUP.sh) script to generate Protocol Buffer support code.
 
 - Run `cargo run` to build and run the sample.

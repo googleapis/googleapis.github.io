@@ -19,7 +19,7 @@ This sample authenticates with an API key that it reads from the
 - Build and install `protoc-gen-swift` from
   [github.com/apple/swift-protobuf](https://github.com/apple/swift-protobuf)
 
-- Run the [RUNME](RUNME) script to generate Protocol Buffer support code.
+- Run the [SETUP.sh](SETUP.sh) script to generate Protocol Buffer support code.
 
 - Run `swift build` to build the sample.
 
