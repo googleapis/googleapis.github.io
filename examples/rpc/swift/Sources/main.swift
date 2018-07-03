@@ -24,6 +24,7 @@ guard let GoogleAPIKey = ProcessInfo.processInfo.environment["GOOGLE_API_KEY"] e
 var document = Google_Cloud_Language_V1_Document()
 document.type = .plainText
 document.content = "The rain in Spain stays mainly in the plain."
+
 var request = Google_Cloud_Language_V1_AnalyzeEntitiesRequest()
 request.document = document
 let requestData = try request.serializedData()

@@ -27,3 +27,8 @@ This sample authenticates with an API key that it reads from the
 - Run the [SETUP.sh](SETUP.sh) script to generate Protocol Buffer support code.
 
 - Run `cargo run` to build and run the sample.
+
+If you have build problems, be sure that the `protobuf` version specified in
+`Cargo.toml` matches the version of `protobuf-codegen` that you installed with
+`cargo install`. `cargo install --list` will show the version of
+`protobuf-codegen` that you've installed.

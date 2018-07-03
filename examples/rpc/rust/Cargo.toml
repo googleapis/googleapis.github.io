@@ -4,6 +4,6 @@ version = "0.1.0"
 authors = ["Tim Burks <timburks@google.com>"]
 
 [dependencies]
-protobuf = "1.0.24"
+protobuf = "2.0.2"
 reqwest = "0.8.5"
 hyper = "0.11.24"

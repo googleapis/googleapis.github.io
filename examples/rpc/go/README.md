@@ -27,4 +27,4 @@ To run the sample:
 
 - `go get .`
 
-- `go run .`
+- `go run main.go`
