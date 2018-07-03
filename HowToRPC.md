@@ -42,9 +42,13 @@ Protocol Buffers Language.
 To compile Protocol Buffer Language files, you’ll need `protoc`, the Protocol
 Buffer compiler. You can download `protoc` from the
 [google/protobuf release page](https://github.com/google/protobuf/releases) on
-GitHub or build it from source. You’ll probably also need a code generation
-plugin for the language that you’re using. Plugins are standalone executables
-written in many different languages, and the plugin interface is defined in the
+GitHub (look for the `protoc` release for your machine architecture, e.g.
+`protoc-3.6.0-linux-x86_64.zip`) or build it from source (this will take a
+while).
+
+You’ll probably also need a code generation plugin for the language that you’re
+using. Plugins are standalone executables written in many different languages,
+and the plugin interface is defined in the
 [plugin.proto](https://github.com/google/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto)
 file. Here are some plugins that we have used:
 
