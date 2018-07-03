@@ -64,13 +64,13 @@ messages using gRPC’s HTTP/2-based messaging system, which supports request
 multiplexing, streaming APIs, and advanced flow control. To learn more about
 working with gRPC, visit [grpc.io/docs](https://grpc.io/docs).
 
-If gRPC support is unavailable, Google APIs can also be called using HTTP/1
-using the protocol described in the next section.
+If gRPC support is unavailable, Google APIs can also be called using HTTP/1.1 or
+later using the fallback protocol described in the next section.
 
 ### Authentication
 
-To use Google APIs, a client needs to use API keys for unauthenticated requests
-or OAuth tokens for authenticated requests. For more information, see
+To use Google APIs, a client needs to authenticate with an API key or an OAuth
+token. For more information, see
 [the Google Cloud Authentication Overview](https://cloud.google.com/docs/authentication/).
 
 API keys can be obtained from the
@@ -79,11 +79,11 @@ page. OAuth tokens can be obtained by [OAuth 2](https://oauth.net/2/) clients
 and libraries. For a sample command-line client, see the
 [oauth2l](https://github.com/google/oauth2l) on GitHub.
 
-## The HTTP RPC Protocol
+## The gRPC Fallback Protocol
 
-Most Google APIs support a simple RPC protocol using Protocol Buffers (protobuf)
-over HTTP. It allows clients to call Google APIs directly, often using standard
-library functions.
+Along with gRPC, most Google APIs support a simple fallback protocol that uses
+Protocol Buffers (protobuf) over HTTP. It allows clients to call Google APIs
+directly, often using standard library functions.
 
 This protocol uses fixed URLs to specify the RPC endpoints, and passes
 request/response messages as HTTP request/response body using HTTP POST. It uses
@@ -108,7 +108,7 @@ URL ::= BaseUrl "/" Service "/" Method
   `google.cloud.language.v1.LanguageService`. In this case,
   `google.cloud.language.v1` is the package name in
   `google/cloud/language/v1/language_service.proto` and `LanguageService` is the
-  name of the service section found on this line.
+  name of the service section found in this file.
 
 - **Method.** This is the protobuf `rpc` name, such as `AnnotateText`.
 
@@ -148,6 +148,11 @@ The HTTP response contains at least the following headers:
   status codes.
 
 ## [Examples](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/)
+
+To illustrate how easily the gRPC fallback protocol can be used to call Google
+RPC APIs, we've written a few examples. Each is as basic as possible - using
+standard library functions wherever possible and commonly-used Protocol Buffer
+support code. If you write one in a different language, send us a pull request!
 
 - [Go](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/go)
 

@@ -55,8 +55,8 @@ library.
 
 ### Authentication
 
-To use Google APIs, a client needs to use API keys for unauthenticated requests
-or OAuth tokens for authenticated requests. For more information, see
+To use Google APIs, a client needs to authenticate with an API key or an OAuth
+token. For more information, see
 [the Google Cloud Authentication Overview](https://cloud.google.com/docs/authentication/).
 
 API keys can be obtained from the
