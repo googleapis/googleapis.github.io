@@ -84,7 +84,7 @@ page. OAuth tokens can be obtained by [OAuth 2](https://oauth.net/2/) clients
 and libraries. For a sample command-line client, see the
 [oauth2l](https://github.com/google/oauth2l) on GitHub.
 
-## The gRPC Fallback Protocol
+## gRPC Fallback (Experimental)
 
 Along with gRPC, most Google APIs support a simple fallback protocol that uses
 Protocol Buffers (protobuf) over HTTP. It allows clients to call Google APIs
@@ -104,10 +104,11 @@ URL ::= BaseUrl "/" Service "/" Method
 
 - **BaseUrl.** This is the base URL published by service owners, either via
   documentation or service discovery. For most Google APIs, the BaseUrl looks
-  like `https://language.googleapis.com/$rpc`. The base address can be found in
-  the API reference documentation where it is identified as the `Service name`.
-  For this example, `language.googleapis.com` is found in the Google Cloud
-  Natural Language API Reference.
+  like `https://language.googleapis.com/$rpc` (experimental: this format may
+  change in the future). The base address can be found in the API reference
+  documentation where it is identified as the `Service name`. For this example,
+  `language.googleapis.com` is found in the Google Cloud Natural Language API
+  Reference.
 
 - **Service.** This is the fully qualified protobuf `service` name, such as
   `google.cloud.language.v1.LanguageService`. In this case,
