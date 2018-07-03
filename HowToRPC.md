@@ -99,18 +99,18 @@ URL ::= BaseUrl "/" Service "/" Method
 
 - **BaseUrl.** This is the base URL published by service owners, either via
   documentation or service discovery. For most Google APIs, the BaseUrl looks
-  like "https://language.googleapis.com/$rpc". The base address can be found in
-  the API reference documentation where it is identified as the “Service name”.
-  For this example, “language.googleapis.com” is found in the Google Cloud
+  like `https://language.googleapis.com/$rpc`. The base address can be found in
+  the API reference documentation where it is identified as the `Service name`.
+  For this example, `language.googleapis.com` is found in the Google Cloud
   Natural Language API Reference.
 
 - **Service.** This is the fully qualified protobuf `service` name, such as
-  "google.cloud.language.v1.LanguageService". In this case,
-  “google.cloud.language.v1” is the package name in
-  google/cloud/language/v1/language_service.proto and “LanguageService” is the
+  `google.cloud.language.v1.LanguageService`. In this case,
+  `google.cloud.language.v1` is the package name in
+  `google/cloud/language/v1/language_service.proto` and `LanguageService` is the
   name of the service section found on this line.
 
-- **Method.** This is the protobuf `rpc` name, such as "AnnotateText".
+- **Method.** This is the protobuf `rpc` name, such as `AnnotateText`.
 
 ### Requests
 
@@ -119,11 +119,13 @@ server to handle the request properly, the client must set several HTTP request
 headers:
 
 - **Content-Type.** The request message format is specified by the Content-Type
-  header and must be "application/x-protobuf". X-Goog-Api-Key. This specifies a
-  valid Google API key. It is optional if the Authorization header is used.
+  header and must be `application/x-protobuf`.
+
+- **X-Goog-Api-Key.** This specifies a valid Google API key. It is optional if
+  the Authorization header is used.
 
 - **Authorization.** This specifies a valid Google OAuth access token in the
-  format of "Bearer {token}". It is optional if the request is unauthenticated
+  format of `Bearer {token}`. It is optional if the request is unauthenticated
   or if an API key is used.
 
 - **User-Agent.** This should contain a meaningful string that identifies the
@@ -140,7 +142,7 @@ response body contains a serialized `google.rpc.Status` message.
 The HTTP response contains at least the following headers:
 
 - **Content-Type.** This specifies the response serialization format. For normal
-  responses and server errors, this will be "application/x-protobuf". Different
+  responses and server errors, this will be `application/x-protobuf`. Different
   values can be returned for network errors, such as when a message is rejected
   by a network proxy. All such errors will be accompanied by appropriate HTTP
   status codes.
