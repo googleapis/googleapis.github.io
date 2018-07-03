@@ -1,9 +1,10 @@
 # How to Call Google APIs: RPC Edition
 
 _For many developers, the easiest way to call a Google API is with one of our
-client libraries. But occasionally someone may prefer to make API calls
-directly - perhaps from a language or environment that we don’t support or using
-a different networking library or tool. Here we’ll show you how to do it._
+[client libraries](https://cloud.google.com/apis/docs/cloud-client-libraries).
+But occasionally someone may prefer to make API calls directly - perhaps from a
+language or environment that we don’t support or using a different networking
+library or tool. Here we’ll show you how to do it._
 
 This page focuses on calling Google APIs directly using their underlying RPC
 interfaces. Most Google APIs are also available as REST services. For that, see
@@ -14,8 +15,8 @@ interfaces. Most Google APIs are also available as REST services. For that, see
 ### An API definition
 
 Most Google APIs are designed as
-[RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) APIs using the
-[Protocol Buffers language](https://developers.google.com/protocol-buffers/docs/overview).
+[RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) APIs using
+[Protocol Buffers](https://developers.google.com/protocol-buffers/docs/overview).
 The Protocol Buffers definitions of public Google APIs are hosted on GitHub in
 the [googleapis/googleapis](https://github.com/googleapis/googleapis)
 repository.
@@ -58,6 +59,9 @@ file. Here are some plugins that we have used:
 
 - **Swift**
   [github.com/apple/swift-protobuf](https://github.com/apple/swift-protobuf)
+
+For a list of Google-supported languages, see the
+[Protocol Buffers API Reference](https://developers.google.com/protocol-buffers/docs/reference/overview).
 
 ### Making RPC API requests
 
