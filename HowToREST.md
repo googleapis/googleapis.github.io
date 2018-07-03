@@ -24,7 +24,7 @@ For an example, see the
 [Cloud Natural Language API](https://cloud.google.com/natural-language/), which
 is defined by
 [this Discovery Document](https://language.googleapis.com/$discovery/rest?version=v1).
-Human-rea dable documentation is in the
+Human-readable documentation is in the
 [Google Cloud Natural Language API reference](https://cloud.google.com/natural-language/docs/reference/rest/).
 We’ll call the
 [AnalyzeEntities](https://cloud.google.com/natural-language/docs/reference/rest/v1/documents/analyzeEntities)
@@ -74,23 +74,13 @@ service:
 ```
 $ curl "https://language.googleapis.com/v1/documents:analyzeEntities" \
   -X POST \
-  -H "X-Goog-Api-Key: $APIKEY" \
+  -H "X-Goog-Api-Key: $GOOGLE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"document":{"content":"The rain in Spain stays mainly in the plain.", "type":"PLAIN_TEXT"}}' \
   -i
 HTTP/2 200
 content-type: application/json; charset=UTF-8
-vary: X-Origin
-vary: Referer
-vary: Origin,Accept-Encoding
-date: Wed, 28 Mar 2018 15:37:09 GMT
-server: ESF
-cache-control: private
-x-xss-protection: 1; mode=block
-x-frame-options: SAMEORIGIN
-x-content-type-options: nosniff
-alt-svc: hq=":443"; ma=2592000; quic=51303433; quic=51303432; quic=51303431; quic=51303339; quic=51303335,quic=":443"; ma=2592000; v="43,42,41,39,35"
-accept-ranges: none
+[other headers]
 
 {
   "entities": [
