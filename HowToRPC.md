@@ -7,8 +7,8 @@ a different networking library or tool. Here we’ll show you how to do it._
 
 This page focuses on calling Google APIs directly using their underlying RPC
 ([Remote Procedure Call](https://en.wikipedia.org/wiki/Remote_procedure_call))
-interfaces. Most of these APIs are also available as REST services. For that,
-see [How to Call Google APIs, REST Edition](/HowToREST).
+interfaces. Most Google APIs are also available as REST services. For that, see
+[How to Call Google APIs, REST Edition](/HowToREST).
 
 ## What you’ll need
 
@@ -130,19 +130,18 @@ headers:
   the Authorization header is used.
 
 - **Authorization.** This specifies a valid Google OAuth access token in the
-  format of `Bearer {token}`. It is optional if the request is unauthenticated
-  or if an API key is used.
-
-- **User-Agent.** This should contain a meaningful string that identifies the
-  client application for analytics and troubleshooting purposes. It is usually
-  provided automatically by HTTP support libraries.
+  format of `Bearer {token}`. It is optional if an API key is provided.
 
 ### Responses
 
 For successful requests, the HTTP status code is `200` and the HTTP response
 body contains the serialized RPC response message. For unsuccessful requests,
-the HTTP status code is the HTTP mapping for `google.rpc.Code` and the HTTP
-response body contains a serialized `google.rpc.Status` message.
+the HTTP status code is the HTTP mapping for
+[`google.rpc.Code`](https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto)
+and the HTTP response body contains a serialized
+[`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
+message. For details, see [Errors](https://cloud.google.com/apis/design/errors)
+in the [API Design Guide](https://cloud.google.com/apis/design).
 
 The HTTP response contains at least the following headers:
 
