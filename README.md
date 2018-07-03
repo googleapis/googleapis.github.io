@@ -12,7 +12,9 @@ domain, and support both
 [gRPC](https://grpc.io/) APIs using
 [transcoding](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto).
 
-Google APIs are developed as RPC API services defined using
+Google APIs are developed as RPC
+([Remote Procedure Call](https://en.wikipedia.org/wiki/Remote_procedure_call))
+API services defined using
 [Protocol Buffers](https://developers.google.com/protocol-buffers/) (proto).
 Google API specifications are published in the
 [Google APIs](https://github.com/googleapis/googleapis) repository. External

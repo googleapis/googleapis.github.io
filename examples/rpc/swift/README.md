@@ -1,7 +1,8 @@
 # Swift HTTP RPC Sample
 
 This directory contains a sample Swift program that calls the Google Natural
-Language API using HTTP, RPC, and Protocol Buffers.
+Language API using the gRPC Fallback protocol described in
+[HowToRPC](https://googleapis.github.io/HowToRPC).
 
 ## Protocol Buffer Support
 
