@@ -6,7 +6,6 @@ directly - perhaps from a language or environment that we don’t support or usi
 a different networking library or tool. Here we’ll show you how to do it._
 
 This page focuses on calling Google APIs directly using their underlying RPC
-([Remote Procedure Call](https://en.wikipedia.org/wiki/Remote_procedure_call))
 interfaces. Most Google APIs are also available as REST services. For that, see
 [How to Call Google APIs, REST Edition](/HowToREST).
 
@@ -60,7 +59,7 @@ file. Here are some plugins that we have used:
 - **Swift**
   [github.com/apple/swift-protobuf](https://github.com/apple/swift-protobuf)
 
-### A way to make API requests
+### Making RPC API requests
 
 [gRPC](https://grpc.io/) is the recommended way to call Google RPC APIs. gRPC
 support is typically provided by additional `protoc` plugins that generate code

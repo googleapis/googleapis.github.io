@@ -47,7 +47,7 @@ Google REST APIs use JSON for most message responses and POST bodies. Quoting
 > including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These
 > properties make JSON an ideal data-interchange language.
 
-### A way to make API requests
+### Making REST API Requests
 
 Google REST APIs are designed to be called by any standards-compliant HTTP
 client, including the [curl](https://curl.haxx.se/) command-line tool and
