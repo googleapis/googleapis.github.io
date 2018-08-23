@@ -38,7 +38,7 @@ support, we provide instructions here for calling Google APIs in both
 
 - [How to Call Google APIs, REST edition](/HowToREST)
 
-- [How to Call Google APIs, RPC edition](/HowToRPC)
+- [How to Call Google APIs, RPC eJdition](/HowToRPC)
 
 ### API Client Tools
 
