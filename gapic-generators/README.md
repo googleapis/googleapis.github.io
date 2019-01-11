@@ -10,18 +10,11 @@ are published in the
 an initial [gapic-generator](https://github.com/googleapis/gapic-generator) that
 produced clients in seven languages, and in 2018, we began developing a new
 generation of generators, each written in the language that it generates.
-Standards that we use for these generators are described below.
+Standards that we use for these generators are listed below.
 
-## [Running GAPIC Generators](/gapic-generators/usage)
-
-A guide to invoking and using API client generators that follow GAPIC
-conventions.
-
-## [Configuring GAPIC Generators](/gapic-generators/configuration)
-
-A guide to the Protocol Buffer options that we use to configure client
-generation.
-
-## [Implementing GAPIC Generators](/gapic-generators/implementation)
-
-A guide for implementers and maintainers of GAPIC generators.
+- **[Running GAPIC Generators.](/gapic-generators/usage)** A guide to invoking
+  and using API client generators that follow GAPIC conventions.
+- **[Configuring GAPIC Generators.](/gapic-generators/configuration)** A guide
+  to the Protocol Buffer options that we use to configure client generation.
+- **[Implementing GAPIC Generators.](/gapic-generators/implementation)** A guide
+  for implementers and maintainers of GAPIC generators.

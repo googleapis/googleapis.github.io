@@ -1,8 +1,11 @@
 # Configuring [GAPIC Generators](/gapic-generators)
 
-Since different target environments can vary widely, a goal of these conventions
-is to provide a small vocabulary that is able to provide an intuitive experience
-across these disparate targets.
+To support generation of easy-to-use API clients, GAPIC generators accept
+additional configuration that supplements Protocol Buffer descriptions of APIs.
+Configuration that is common across languages is represented with
+[custom options](https://developers.google.com/protocol-buffers/docs/proto#customoptions)
+that are added as annotations to Protocol Buffer source files. These annotations
+are described here.
 
 ## API Metadata
 
@@ -104,12 +107,7 @@ API is published._
 
 ## Resource Name Classes
 
-> _N.B.: This feature has numerous (but rare) edge cases outside the scope of
-> this document. See
-> [the full input contract](https://docs.google.com/document/d/1KKVp-CFpWhm2gjQXRA8OGQGVYkhNxlXxbWlC3Mz5F3I/edit?ts=5ac7c988#heading=h.48avwq8tp8dx)
-> for a detailed discussion._
-
-Certain languages provided convenient classes to represent resource names, which
+Certain languages provide convenient classes to represent resource names, which
 are a common parameter in
 [resource-oriented design](https://cloud.google.com/apis/design/resources). When
 annotating a message that represents a resource, this is identified and the
@@ -189,10 +187,6 @@ In both RPC and REST APIs, requests and responses are represented using an input
 structure describing an API request and an output structure describing the API
 response. Providing discrete arguments can yield a better client library
 experience in some cases.
-
-_NOTE:_ We expect that, by convention, Google APIs will specify these in a
-separate file, and a pre-processing step will populate the annotations in this
-section.
 
 ### Annotations
 
