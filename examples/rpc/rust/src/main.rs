@@ -1,10 +1,10 @@
-// Copyright 2018 Google LLC. All Rights Reserved.
+// Copyright 2018 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//    http://www.apache.org/licenses/LICENSE-2.0
+//    https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -34,11 +34,11 @@ fn main() {
     let mut document = language_service::Document::new();
     document.set_content(String::from("The rain in Spain stays mainly in the plain."));
     document.field_type = language_service::Document_Type::PLAIN_TEXT;
-	
+
     let mut analyze_entities_request = language_service::AnalyzeEntitiesRequest::new();
     analyze_entities_request.set_document(document);
     analyze_entities_request.encoding_type = language_service::EncodingType::UTF8;
-    
+
 	let serialized_bytes = analyze_entities_request.write_to_bytes().unwrap();
 
     let client = reqwest::Client::new();
