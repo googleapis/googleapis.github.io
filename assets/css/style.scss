@@ -14,6 +14,8 @@ h2 { @extend .h-c-headline--two };
 h3 { @extend .h-c-headline--three };
 h4 { @extend .h-c-headline--four };
 
+p { @extend .h-u-font-weight-regular };
+
 
 // ----------------------------------------------------------------------------
 // -- The following is a flat-out fork of the hercules CSS.                  --
