@@ -11,15 +11,15 @@ development server.
 We use [GitHub Pages][1] to make this documentation available, which uses
 [Jekyll][2] under the hood.
 
-If you have [Docker][3] installed, simply clone this repository and run the
+If you have [Docker][3] installed, clone this repository and run the
 `serve.sh` file at the root of the repository. This script does two things:
 
   * It builds the provided Docker image (unless you already have it) and tags
     it as `googleapis-site`.
   * It runs the `googleapis-site` image.
 
-The Jekyll development server uses port 4000 by default, so simply point your
-web browser to `http://localhost:4000`, and you should see the site.
+The Jekyll development server uses port 4000 by default; point your web
+browser to `http://localhost:4000`, and you should see the site.
 
 ### Arguments
 
