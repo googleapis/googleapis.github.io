@@ -30,7 +30,8 @@ The RPC details are documented online in the
 We’ll call the
 [AnalyzeEntities](https://cloud.google.com/natural-language/docs/reference/rpc/google.cloud.language.v1#google.cloud.language.v1.LanguageService.AnalyzeEntities)
 API, which takes a block of text as input and returns a list of names and nouns
-that it finds in the text along with some interesting properties of each entity.
+that it finds in the text along with some interesting properties of each
+entity.
 
 ### Protocol Buffers
 
@@ -72,8 +73,8 @@ messages using gRPC’s HTTP/2-based messaging system, which supports request
 multiplexing, streaming APIs, and advanced flow control. To learn more about
 working with gRPC, visit [grpc.io/docs](https://grpc.io/docs).
 
-If gRPC support is unavailable, Google APIs can also be called using HTTP/1.1 or
-later using the fallback protocol described in the next section.
+If gRPC support is unavailable, Google APIs can also be called using HTTP/1.1
+or later using the fallback protocol described in the next section.
 
 ### Authentication
 
@@ -94,8 +95,8 @@ Protocol Buffers (protobuf) over HTTP. It allows clients to call Google APIs
 directly, often using standard library functions.
 
 This protocol uses fixed URLs to specify the RPC endpoints, and passes
-request/response messages as HTTP request/response body using HTTP POST. It uses
-normal HTTP headers to pass the RPC metadata, such as System Parameters.
+request/response messages as HTTP request/response body using HTTP POST. It
+uses normal HTTP headers to pass the RPC metadata, such as System Parameters.
 
 ### URL
 
@@ -116,8 +117,8 @@ URL ::= BaseUrl "/" Service "/" Method
 - **Service.** This is the fully qualified protobuf `service` name, such as
   `google.cloud.language.v1.LanguageService`. In this case,
   `google.cloud.language.v1` is the package name in
-  `google/cloud/language/v1/language_service.proto` and `LanguageService` is the
-  name of the service section found in this file.
+  `google/cloud/language/v1/language_service.proto` and `LanguageService` is
+  the name of the service section found in this file.
 
 - **Method.** This is the protobuf `rpc` name, such as `AnnotateText`.
 
@@ -149,11 +150,11 @@ in the [API Design Guide](https://cloud.google.com/apis/design).
 
 The HTTP response contains at least the following headers:
 
-- **Content-Type.** This specifies the response serialization format. For normal
-  responses and server errors, this will be `application/x-protobuf`. Different
-  values can be returned for network errors, such as when a message is rejected
-  by a network proxy. All such errors will be accompanied by appropriate HTTP
-  status codes.
+- **Content-Type.** This specifies the response serialization format. For
+  normal responses and server errors, this will be `application/x-protobuf`.
+  Different values can be returned for network errors, such as when a message
+  is rejected by a network proxy. All such errors will be accompanied by
+  appropriate HTTP status codes.
 
 ## [Examples](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/)
 
