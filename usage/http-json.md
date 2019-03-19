@@ -6,9 +6,9 @@ directly - perhaps from a language or environment that we don’t support or
 using a different networking library or tool. Here we’ll show you how to do
 it._
 
-This page focuses on calling Google APIs using JSON REST interfaces. Most of
+This page focuses on calling Google APIs using the HTTP/JSON interface. Most of
 these APIs are also available as Protocol Buffer-based RPC services. For more
-on that, see [How to Call Google APIs, RPC Edition](/HowToRPC).
+on that, see [Calling Google APIs with gRPC](./grpc.md).
 
 ## What you’ll need
 

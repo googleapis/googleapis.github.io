@@ -8,7 +8,7 @@ library or tool. Here we’ll show you how to do it._
 
 This page focuses on calling Google APIs directly using their underlying RPC
 interfaces. Most Google APIs are also available as REST services. For that, see
-[How to Call Google APIs, REST Edition](/HowToREST).
+[Calling Google APIs with HTTP/JSON](./http-json.md).
 
 ## What you’ll need
 
