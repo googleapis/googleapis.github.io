@@ -19,7 +19,7 @@
 # (https://prettier.io/)
 #
 
-for f in `git ls-files | egrep '.md$'` 
+for f in `git ls-files | egrep '.md$'`
 do
-	prettier --write --print-width 80 --prose-wrap always $f
+	prettier --write --print-width 79 --prose-wrap always $f
 done

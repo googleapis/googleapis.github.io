@@ -2,12 +2,13 @@
 
 _For many developers, the easiest way to call a Google API is with one of our
 client libraries. But occasionally someone may prefer to make API calls
-directly - perhaps from a language or environment that we don’t support or using
-a different networking library or tool. Here we’ll show you how to do it._
+directly - perhaps from a language or environment that we don’t support or
+using a different networking library or tool. Here we’ll show you how to do
+it._
 
 This page focuses on calling Google APIs using JSON REST interfaces. Most of
-these APIs are also available as Protocol Buffer-based RPC services. For more on
-that, see [How to Call Google APIs, RPC Edition](/HowToRPC).
+these APIs are also available as Protocol Buffer-based RPC services. For more
+on that, see [How to Call Google APIs, RPC Edition](/HowToRPC).
 
 ## What you’ll need
 
@@ -37,8 +38,8 @@ entity.
 Google REST APIs use JSON for most message responses and POST bodies. Quoting
 [www.json.org](https://www.json.org/):
 
-> JSON (JavaScript Object Notation) is a lightweight data-interchange format. It
-> is easy for humans to read and write. It is easy for machines to parse and
+> JSON (JavaScript Object Notation) is a lightweight data-interchange format.
+> It is easy for humans to read and write. It is easy for machines to parse and
 > generate. It is based on a subset of the
 > [JavaScript Programming Language](http://crockford.com/javascript/),
 > [Standard ECMA-262 3rd Edition - December 1999](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf).

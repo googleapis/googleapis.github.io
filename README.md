@@ -1,4 +1,4 @@
-# Google APIs
+## Google APIs
 
 The [googleapis](https://github.com/googleapis) organization hosts tools,
 technical articles, and issues related to Google API design and practice. It
@@ -7,9 +7,9 @@ supported languages.
 
 ### About Google APIs
 
-[Google APIs](https://github.com/googleapis/googleapis) refers to networked APIs
-provided by Google services. Most Google APIs are hosted on the `googleapis.com`
-domain, and support both
+[Google APIs](https://github.com/googleapis/googleapis) refers to networked
+APIs provided by Google services. Most Google APIs are hosted on the
+`googleapis.com` domain, and support both
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) and
 [gRPC](https://grpc.io/) APIs using
 [transcoding](https://github.com/googleapis/googleapis/blob/master/google/api/http.proto).
@@ -48,9 +48,9 @@ provide instructions here for calling Google APIs in both
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) and
 [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) forms:
 
-- [How to Call Google APIs, REST edition](/HowToREST)
+- [How to Call Google APIs, REST edition](/HowToREST.md)
 
-- [How to Call Google APIs, RPC edition](/HowToRPC)
+- [How to Call Google APIs, RPC edition](/HowToRPC.md)
 
 ### API Client Tools
 
@@ -69,10 +69,10 @@ All of our generators and related tools are open source and hosted in the
 them, see [gapic-generators](/gapic-generators).
 
 The [googleapis](https://github.com/googleapis) organization also hosts
-repositories that contain common code used by Google's generated and handwritten
-client libraries. Details vary by language, but most provide support for
-generally-needed features like paging and retry. Currently there is one such
-library for each of the main languages that we support:
+repositories that contain common code used by Google's generated and
+handwritten client libraries. Details vary by language, but most provide
+support for generally-needed features like paging and retry. Currently there is
+one such library for each of the main languages that we support:
 [gax-dotnet](https://github.com/googleapis/gax-dotnet),
 [gax-go](https://github.com/googleapis/gax-go),
 [gax-java](https://github.com/googleapis/gax-java),
@@ -81,7 +81,8 @@ library for each of the main languages that we support:
 [gax-python](https://github.com/googleapis/gax-python), and
 [gax-ruby](https://github.com/googleapis/gax-ruby). Note that we consider these
 to be internal implementation details of our clients and reserve the right to
-make changes, so if you choose to use them, be sure to refer to tagged versions.
+make changes, so if you choose to use them, be sure to refer to tagged
+versions.
 
 #### The API Discovery Format
 
