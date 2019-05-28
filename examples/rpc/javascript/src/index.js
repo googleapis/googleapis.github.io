@@ -40,7 +40,7 @@ async function main() {
   if (process.env['GOOGLE_APPLICATION_CREDENTIALS']) {
     // service account authentication
     const serviceUri =
-      'https://language.googleapis.com/google.cloud.language.v1.TextToSpeech';
+      'https://language.googleapis.com/google.cloud.language.v1.LanguageService';
     const googleAuth = new auth.GoogleAuth();
     const client = await googleAuth.getClient();
     headers = await client.getRequestHeaders(serviceUri);
