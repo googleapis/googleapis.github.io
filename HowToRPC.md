@@ -168,3 +168,5 @@ support code. If you write one in a different language, send us a pull request!
 - [Rust](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/rust)
 
 - [Swift](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/swift)
+
+- [JavaScript](https://github.com/googleapis/googleapis.github.io/tree/master/examples/rpc/javascript)
