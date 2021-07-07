@@ -19,7 +19,6 @@ listed below:
 
 - [gapic-generator-python](https://github.com/googleapis/gapic-generator-python)
 - [gapic-generator-go](https://github.com/googleapis/gapic-generator-go)
-- [gapic-generator-java](https://github.com/googleapis/gapic-generator-java)
 - [gapic-generator-ruby](https://github.com/googleapis/gapic-generator-ruby)
 - [gapic-generator-kotlin](https://github.com/googleapis/gapic-generator-kotlin)
 - [gapic-generator-csharp](https://github.com/googleapis/gapic-generator-csharp)
